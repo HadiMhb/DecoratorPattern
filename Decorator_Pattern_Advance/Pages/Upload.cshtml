@@ -1,0 +1,25 @@
+﻿@page
+@using Decorator_Pattern_Advance.Pages
+@model UploadModel
+@{
+}
+
+<form method="post" enctype="multipart/form-data">
+    <input type="file" asp-for="Upload" />
+    <input type="submit" />
+</form>
+
+
+@{
+    if (Model.Success.HasValue)
+    {
+        if (Model.Success.Value)
+        {
+            <span style="color:green;margin-top:20px">بارگزاری تصویر با موفقیت انجام شد</span>
+        }
+        else
+        {
+            <span style="color:red;margin-top:20px">بارگزاری تصویر با خطا مواجه شد</span>
+        }
+    }
+}
